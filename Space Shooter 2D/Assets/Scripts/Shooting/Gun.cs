@@ -11,11 +11,16 @@ public class Gun : MonoBehaviour
     bool DoubbleGun = false;
 
 
+
     // Update is called once per frame
     void Update()
     {
         SwitchGuns();
+        Shooting();
+    }
 
+    void Shooting()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             if (SingleGun == true)
@@ -33,6 +38,7 @@ public class Gun : MonoBehaviour
                 bullet1.GetComponent<Rigidbody2D>().velocity = spawnPoint[1].up * shootingSpeed;
                 bullet2.GetComponent<Rigidbody2D>().velocity = spawnPoint[2].up * shootingSpeed;
             }
+
         }
     }
 
